@@ -1,0 +1,869 @@
+body,
+html,
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*Navigation*/
+
+#nav {
+    background: content-box radial-gradient(/*rgb(95, 94, 94),*/
+    white, black);
+}
+
+#nav .topnav {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    height: 60px;
+}
+
+#nav .topnav .left {
+    list-style-type: none;
+    display: flex;
+}
+
+#nav .topnav .left a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #fff;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 0 3px;
+    transition: 0.5s;
+}
+
+#nav .topnav .left a:hover {
+    background-color: red;
+    border-radius: 8px;
+    color: black;
+}
+
+#nav .topnav .right {
+    list-style-type: none;
+    display: flex;
+    margin-left: auto;
+}
+
+#nav .topnav .right button {
+    display: block;
+    background: none;
+    outline: none;
+    height: 25px;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+#nav .topnav .right button:hover {
+    color: red;
+}
+
+#nav .topnav .right #btnlogout {
+    background-color: #fff;
+    color: red;
+    list-style-type: none;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 8px;
+    display: none;
+    cursor: pointer;
+    margin: 0 auto;
+    animation: bottomup 0.5s;
+    z-index: 100;
+}
+
+#nav .topnav .right li:hover>#btnlogout {
+    display: block;
+}
+
+#nav .topnav .right li>#btnlogout:hover {
+    background-color: red;
+    color: black;
+}
+
+#nav .botnav {
+    display: flex;
+    height: 80px;
+}
+
+#nav .botnav .logo img {
+    height: 90px;
+}
+
+#nav .botnav #btnmenu {
+    display: none;
+}
+
+#nav .botnav #navmenu {
+    margin-left: auto;
+    list-style-type: none;
+    display: flex;
+}
+
+#nav .botnav #navmenu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13pt;
+    font-weight: bold;
+    display: block;
+    min-width: 60px;
+    padding-top: 10px;
+    text-align: center;
+    height: 100%;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+
+#nav .botnav #navmenu a:hover {
+    border-bottom: 6px solid rgb(122, 26, 26);
+    color: rgb(122, 26, 26);
+    padding-top: 5px;
+}
+
+
+/*User*/
+
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(7, 7, 7, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+#login {
+    width: 500px;
+    background-image: url('../img//anh-ma-kinh-di-15.jpg');
+    margin: 100px auto 0 auto;
+    padding-bottom: 20px;
+    animation: topdown 0.7s;
+    position: relative;
+    border-radius: 50% 20% / 10% 40%;
+    z-index: 999;
+}
+
+#login .close {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    font-size: 35pt;
+    transform: rotate(45deg);
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+#login .close:hover {
+    color: rgb(241, 19, 19);
+}
+
+#login h2 {
+    font-family: "Times New Roman";
+    display: inline-block;
+    margin: 20px 0 10px 40px;
+    color: white;
+    padding-bottom: 10px;
+    font-weight: 900;
+}
+
+#login .logininfo {
+    display: flex;
+    justify-content: center;
+}
+
+#login label {
+    display: block;
+    font-weight: bold;
+    font-size: 13pt;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#login input {
+    display: inline-block;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13pt;
+    outline: none;
+}
+
+#login input:focus {
+    border: 2px solid rgb(122, 26, 26);
+}
+
+#login div[id*="error"] {
+    width: 100%;
+    background-color: white;
+    border: 1px solid yellow;
+    color: #f2cb05;
+    font-weight: bold;
+    margin: 5px auto 0;
+    padding: 5px;
+    display: none;
+    cursor: default;
+}
+
+#login div[id*="error"]>.alert {
+    color: red;
+}
+
+#login #btnlogin {
+    display: block;
+    background-color: #f2cb05;
+    width: 200px;
+    height: 40px;
+    border: 3px solid #f2cb05;
+    margin: 50px auto 0;
+    font-size: 20pt;
+    line-height: 30px;
+    color: black;
+    border-radius: 999px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .7);
+}
+
+#login p {
+    margin-top: 60px;
+    text-align: center;
+}
+
+#login p a {
+    text-decoration: none;
+    color: #f2cb05;
+    font-weight: bold;
+}
+
+#login #btnlogin:hover {
+    background-color: #fff;
+    color: #743218;
+}
+
+#login #btnlogin:active {
+    box-shadow: none;
+}
+
+#signup {
+    width: 700px;
+    background-image: url("../img/anh-ma-kinh-di-15.jpg");
+    margin: 100px auto 0 auto;
+    padding-bottom: 20px;
+    animation: topdown 0.7s;
+    position: relative;
+    display: none;
+    border-radius: 50% 20% / 10% 40%;
+    z-index: 999;
+}
+
+#signup .close {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    color: white;
+    font-size: 35pt;
+    transform: rotate(45deg);
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+#signup .close:hover {
+    color: rgb(122, 26, 26);
+}
+
+#signup .signupinfo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#signup .col {
+    width: 50%;
+    padding: 0 50px;
+}
+
+#signup h2 {
+    font-family: "Times New Roman";
+    display: inline-block;
+    margin: 20px 0 10px 40px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: 900;
+}
+
+#signup label {
+    display: block;
+    font-weight: bold;
+    color: white;
+    font-size: 13pt;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#signup input {
+    display: inline-block;
+    width: 250px;
+    border: 2px solid white;
+    padding-left: 5px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13pt;
+    outline: none;
+}
+
+#signup input:focus {
+    border: 2px solid #f2cb05;
+}
+
+#signup div[id*="error"] {
+    width: 100%;
+    background-color: white;
+    border: 2px solid yellow;
+    color: #f2cb05;
+    font-weight: bold;
+    margin: 5px auto 0;
+    padding: 5px;
+    display: none;
+    cursor: default;
+}
+
+#signup div[id*="error"]>.alert {
+    color: red;
+}
+
+#signup #btnsignup {
+    display: block;
+    background-color: #f2cb05;
+    width: 200px;
+    height: 40px;
+    border: 3px solid #f2cb05;
+    margin: 50px auto 0;
+    font-size: 20pt;
+    line-height: 30px;
+    color: white;
+    border-radius: 999px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .7);
+}
+
+#signup p {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#signup p a {
+    text-decoration: none;
+    color: #f2cb05;
+    font-weight: bold;
+}
+
+#signup #btnsignup:hover {
+    background-color: #fff;
+    color: #743218;
+}
+
+#signup #btnsignup:active {
+    box-shadow: none;
+}
+
+
+/*cart*/
+
+#cart #title {
+    height: 100px;
+    background: red;
+    padding: 15px;
+    box-shadow: 0 0 1rem rgb(68, 57, 57);
+}
+
+#cart #title h1 {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: thick double #0a0a0a;
+}
+
+#cart #contain {
+    margin: 30px auto;
+    height: 900px;
+    width: 100%;
+    border: 2px solid #000;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgb(73, 34, 34);
+}
+
+#cart #contain #bill {
+    display: none;
+}
+
+#cart #contain #bill h2 {
+    text-align: center;
+}
+
+#cart #contain #bill .billcontent {
+    border: 1px solid #000;
+    padding: 20px;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#cart #contain #bill .billcontent div:nth-child(1) {
+    width: 40%;
+    text-align: left;
+}
+
+#cart #contain #bill .billcontent div {
+    width: 20%;
+    text-align: center;
+}
+
+#cart #contain #carttable {
+    border-spacing: 0;
+    width: 100%;
+}
+
+#cart #contain #carttable th,
+td {
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#cart #contain #carttable td:not(:nth-child(2)) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart #contain #carttable td img {
+    height: 50px;
+}
+
+#cart #contain #carttable td button {
+    height: auto;
+    width: 30px;
+    line-height: 25px;
+    font-size: 15pt;
+    text-align: center;
+    border: 2px solid #743218;
+    background: #743218;
+    cursor: pointer;
+    outline: none;
+}
+
+#cart #contain #carttable td button:active {
+    border: 2px solid #f2cb05;
+    color: #f2cb05;
+}
+
+#cart #contain #carttable td input {
+    height: 25px;
+    width: 50px;
+    font-size: 12pt;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    background: none;
+}
+
+#cart #contain .total {
+    text-align: right;
+    color: #743218;
+    font-weight: bold;
+    height: 50px;
+    font-size: 12pt;
+    margin-top: 20px;
+}
+
+#cart #contain>button {
+    height: 50px;
+    color: #fff;
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 0 10px;
+    border: 2px solid #743218;
+    background: #743218;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#cart #contain>button:hover {
+    color: #000;
+    background: #f2cb05;
+}
+
+
+/*main* contact*/
+
+#main #contact {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 280px 0;
+    box-shadow: 0 0 35px 14px rgba(3, 3, 3, 0.7);
+}
+
+#main #contact #contactbox {
+    width: 70%;
+    position: relative;
+    padding: 100px 40px;
+    padding-right: 50px;
+}
+
+#main #contact #contactbox h3 {
+    border: black solid 2px;
+    border-radius: 20%;
+    box-shadow: 10px 10px rgba(0, 0, 0, .7);
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    color: hsla(30, 100%, 50%, 0.6);
+    margin: 0;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    padding: 0 10px;
+}
+
+#main #contact #contactbox h4 {
+    font-size: 20px;
+    color: white;
+    font-family: sans-serif;
+}
+
+#main #contact #contactbox h5 {
+    font-size: 20px;
+    color: white;
+    font-family: sans-serif;
+}
+
+#main #contact #contactbox p {
+    text-align: justify;
+    font-size: 18px;
+    color: white;
+    margin: 0;
+    font-family: sans-serif;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+    border: rgb(239, 241, 217) solid 2px;
+}
+
+#main #contact #contactbox p:hover {
+    color: hsla(30, 100%, 50%, 0.6);
+    border-color: hsla(30, 100%, 50%, 0.6);
+    box-shadow: 5px 5px hsla(56, 94%, 68%, 0.7);
+    border-radius: 2%;
+    font-size: 25px;
+}
+
+
+/*Banner begin*/
+
+.bannerSection {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1rem black;
+}
+
+.bannerSection .slideShow {
+    display: none;
+}
+
+.bannerSection .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/*foot*/
+
+#foot {
+    background: linear-gradient(gray, black);
+}
+
+#foot .topfoot {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#foot .topfoot .footmenu {
+    width: 25%;
+    padding: 30px;
+}
+
+#foot .topfoot .footmenu:not(:last-child) {
+    border-right: 2px solid #282828;
+}
+
+#foot .topfoot .footmenu :first-child {
+    align-self: center;
+}
+
+#foot .topfoot .footmenu img {
+    width: 100%
+}
+
+#foot .topfoot .footmenu h4 {
+    color: #f11303;
+    padding-bottom: 15px;
+    margin: 15px 0;
+    border-bottom: 3px solid black;
+}
+
+#foot .topfoot .footmenu a,
+#foot .topfoot .footmenu p {
+    text-decoration: none;
+    font-size: 12pt;
+    color: #999;
+    line-height: 35px;
+    transition: 0.5s;
+}
+
+#foot .botfoot {
+    height: 50px;
+    text-align: center;
+    color: #999;
+    border-top: 2px solid #282828;
+    margin-top: 20px;
+    padding-top: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    /*Navigation*/
+    #nav .topnav {
+        display: flex;
+        justify-content: center;
+    }
+    #nav .topnav .left {
+        display: none;
+    }
+    #nav .topnav .right {
+        margin-left: 0;
+    }
+    #nav .botnav {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 20px;
+    }
+    #nav .botnav .logo {
+        width: calc(100% - 40px);
+    }
+    #nav .botnav .logo img {
+        height: 60px;
+    }
+    #nav .botnav #btnmenu {
+        margin-top: 10px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        font-size: 20pt;
+        font-weight: 900;
+        border-radius: 5px;
+        outline: none;
+    }
+    #nav .botnav #btnmenu:hover {
+        background-color: #f2cb05;
+    }
+    #nav .botnav #navmenu {
+        height: 0;
+        margin-left: 0;
+        flex-direction: column;
+    }
+    #nav .botnav #navmenu.active {
+        height: auto !important;
+    }
+    #nav .botnav #navmenu a {
+        height: 40px;
+    }
+    /*User*/
+    #login {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    #signup {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow-y: auto;
+    }
+    #signup .signupinfo {
+        flex-direction: column;
+        align-items: center;
+    }
+    #signup .col {
+        width: auto;
+        padding: 0;
+    }
+    /*foot*/
+    #foot .topfoot {
+        display: flex;
+    }
+    #foot .topfoot .footmenu {
+        width: 100%;
+        padding: 10px 19px 10px 20px;
+    }
+    #foot .topfoot .footmenu :not(:last-child) {
+        border: none;
+        border-bottom: 2px solid #afafaf;
+    }
+    #foot .botfoot {
+        height: auto;
+        text-align: center;
+        border-top: 2px solid #afafaf;
+        padding: 16px 0;
+    }
+    #foot .topfoot .footmenu img {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    #foot .topfoot .footmenu h4 {
+        padding-bottom: 5px;
+        margin: 5px 0;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+    /*Navigation*/
+    #nav .topnav {
+        justify-content: center;
+        height: 40px;
+    }
+    #nav .topnav .left {
+        display: none;
+    }
+    #nav .topnav .right {
+        margin-left: 0;
+    }
+    #nav .botnav {
+        height: auto;
+        flex-flow: column;
+        align-items: center;
+    }
+    #nav .botnav .logo img {
+        height: 60px;
+    }
+    #nav .botnav #navmenu {
+        margin-left: 0;
+        height: auto !important;
+    }
+    #nav .botnav #navmenu a {
+        height: 50px;
+    }
+    /*User*/
+    .modal {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 10;
+    }
+    #signup {
+        width: 450px;
+        background-color: #fff;
+        margin: 30px auto 0;
+    }
+    #signup .signupinfo {
+        flex-direction: column;
+    }
+    #signup .col {
+        align-self: center;
+        width: auto;
+        padding: 0;
+    }
+    #foot .topfoot .footmenu {
+        width: 50px;
+    }
+    #foot .topfoot .footmenu:not(:last-child) {
+        border-right: 2px solid #afafaf;
+    }
+    #foot .topfoot .footmenu:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+    /*Navigation*/
+    #nav .botnav {
+        display: flex;
+        height: 60px;
+    }
+    #nav .botnav .logo img {
+        height: 60px;
+    }
+    /*foot*/
+    #foot .topfoot .footmenu {
+        padding: 10px;
+    }
+}

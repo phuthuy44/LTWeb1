@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán hàng</title>
+    <link rel="stylesheet" href="./../css/donhang.css">
+    <link rel="stylesheet" href="./../css/css.css">
+
+</head>
+
+<body onload="showbilllist()">
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <ion-icon name="logo-xbox"></ion-icon>
+            <span class="logo-name">Giày Store</span>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="./../index.html">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="link-name">Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="ThongKe.html">
+                    <ion-icon name="bar-chart-outline"></ion-icon>
+                    <span class="link-name">Thống Kê</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="QLSP.html">
+                    <ion-icon name="bag-remove-outline"></ion-icon>
+                    <span class="link-name">Quản lí sản phẩm</span>
+                </a>
+            </li>
+            <li>
+                <a href="QLuser.html">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span class="link-name">Quản lý khách hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="donhang.html">
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                    <span class="link-name">Quản lí đơn hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="./../index.html">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span class="link-name" onclick="logout()">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--Home-content-->
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <ion-icon name="menu" sidebarBtn></ion-icon>
+                <span class="thongke">Quản lí đơn hàng</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search here">
+                <ion-icon name="search"></ion-icon>
+            </div>
+            <div class="protile-details">
+                <img src="/public_html/img/anh-ma-kinh-di-15.jpg" alt="">
+                <span class="admin">Nhóm 8</span>
+            </div>
+        </nav>
+        <!--home-->
+        <div>
+            <table id="show">
+
+
+            </table>
+
+        </div>
+
+
+
+    </section>
+
+    <script>
+        function showbilllist() {
+            if (localStorage.getItem('bill') === null) {
+                var s = '<tr><td>NGÀY</td><td>KHÁCH HÀNG</td><td>GIÁ</td><td>TRẠNG THÁI</td><td>Chức năng</td></tr>' +
+                    '<tr><td colspan=5>Không có đơn hàng nào</td></tr>';
+                document.getElementById('show').innerHTML = s;
+                return false;
+            }
+            var s = '<tr><td>NGÀY</td><td>KHÁCH HÀNG</td><td>GIÁ</td><td>TRẠNG THÁI</td><td>Chức năng</td></tr>';
+            var billArray = JSON.parse(localStorage.getItem('bill'));
+            for (var i = 0; i < billArray.length; i++) {
+                s += '<tr><td>' + billArray[i].date + '</td><td>' + billArray[i].info + '</td><td>' + billArray[i].totalprice + '</td><td style="color: blue">' + billArray[i].status + '</td><td><button  onclick="xacnhan()">Xác nhận</button></td></tr>';
+            }
+
+            document.getElementById('show').innerHTML = s;
+        }
+
+        function xacnhan() {
+            var s = '<tr><td>NGÀY</td><td>KHÁCH HÀNG</td><td>GIÁ</td><td>TRẠNG THÁI</td><td>Chức năng</td></tr>';
+            var billArray = JSON.parse(localStorage.getItem('bill'));
+            for (var i = 0; i < billArray.length; i++) {
+                s += '<tr><td>' + billArray[i].date + '</td><td>' + billArray[i].info + '</td><td>' + billArray[i].totalprice + '</td><td style="color: lightgreen">Đã xử lí</td><td><button  onclick="xacnhan()">Xác nhận</button></td></tr>';
+            }
+            document.getElementById('show').innerHTML = s;
+            alert("xác nhận thành công")
+
+        }
+    </script>
+
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</html>

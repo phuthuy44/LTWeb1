@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' id='style' href='../css/css.css' type='text/css' media='all' />
+    <title>GIÀY STORE</title>
+    <link rel="stylesheet" href="../theme/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body onLoad="showMenu2();checklogin2()">
+    <div style="background-color:red;font-size:12px; color:black;text-align:center;font-weight: bold;" class="aaaa">MIỄN PHÍ ĐỔI TRẢ ĐƠN HÀNG NỘI THÀNH >300K - FREESHIP- ĐẢM BẢO CHẤT LƯỢNG </div>
+    <div id="nav">
+        <div class="container">
+            <div class="topnav">
+                <ul class="left">
+                    <li><a href="htpps://www.facebook.com/"><i class=" fab ti-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab ti-instagram"></i></a></li>
+                </ul>
+                <ul class="right">
+                    <li><button onclick="showform()"><i class=" fab ti-user"></i></button></li>
+                    <li>
+                        <button onclick="location.href='./cart.html'"><i class=" ti-shopping-cart-full" aria-hidden="true"></i></button>
+                    </li>
+                    <li>
+                        <button id="searchButton" class="searchButton1" onclick="showSearch();"><i class="fab ti-search"></i></button>
+                    </li>
+            </div>
+            </ul>
+        </div>
+        <input type="text" id="searchBar" value="" class="searchBar" placeholder="Tìm kiếm sản phẩm" onkeyup="searchProduct();">
+        <div id="searchBox">
+        </div>
+        <div class="botnav">
+            <div><button id="btnmenu" onclick="showMenuMobile()" class><i class="ti-align-justify"></i></button></div>
+            <ul id="navmenu" class></ul>
+        </div>
+    </div>
+
+    <div id="user" class="modal">
+        <div id="login">
+            <form id="loginform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+                <h2>ĐĂNG NHẬP</h2>
+                <div class="logininfo">
+                    <div class="col">
+                        <label for="usernameLogin">Tên đăng nhập:</label>
+                        <input type="text" id="usernameLogin">
+                        <div id="usernameerror"><i class="alert ti-alert"></i>Bạn chưa đăng nhập tên đăng nhập</div>
+                        <label for="passwordLogin">Mật khẩu:</label>
+                        <input type="password" id="passwordLogin">
+                        <div id="passwordloginerror"><i class="alert ti-alert"></i>Bạn chưa nhập mật khẩu</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnlogin">Login</button>
+                <p>Bạn chưa có tài khoản?<a href="#" onClick="showSignUp()">Đăng ký</a></p>
+            </form>
+
+        </div>
+        <div id="signup">
+            <form id="signupform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+                <h2>ĐĂNG KÝ</h2>
+                <div class="signupinfo">
+                    <div class="col">
+                        <label for="fullname">Họ và tên:</label>
+                        <input type="text" id="fullname">
+                        <div id="fullnameerror"><i class="alert ti-alert"></i>Bạn chưa nhập họ tên</div>
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address">
+                        <div id="addresserror"><i class="alert ti-alert"></i>Bạn chưa nhâp địa chỉ</div>
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone">
+                        <div id="phoneerror"><i class="alert ti-alert"></i>Bạn chưa nhập số điện thoại</div>
+                    </div>
+                    <div class="col">
+                        <label for="usernameSignUp">Tên đăng nhập: </label>
+                        <input type="text" id="usernameSignUp">
+                        <div id="usererror"><i class="alert ti-alert"></i>Bạn chưa nhập tên đăng nhập</div>
+                        <label for="passwordSignUp">Mật khẩu: </label>
+                        <input type="password" id="passwordSignUp">
+                        <div id="passworderror"><i class="alert ti-alert"></i>Bạn chưa nhập mật khẩu</div>
+                        <label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+                        <input type="password" id="passwordSignUp2">
+                        <div id="password2error"><i class="alert ti-alert"></i>Mật khẩu không trùng khớp</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnsignup">Đăng ký</button>
+                <p>Trở về trang <a href="#" onClick="showLogin()">Đăng nhập</a></p>
+        </div>
+    </div>
+    </form>
+    <!--searchsection-->
+
+    <!--endsearchsection-->
+    <!--banner-->
+    <div class="bannerSection">
+        <div class=" fade">
+            <img class="slideShow" src="../img/banner - Copy/1.jpg" style="width:100%">
+            <img class="slideShow" src="../img/banner - Copy/2.jpg" style="width:100%">
+            <img class="slideShow" src="../img/banner - Copy/3.jpg" style="width:100%">
+            <img class="slideShow" src="../img/banner - Copy/4.jpg" style="width:100%">
+            <img class="slideShow" src="../img/banner - Copy/5.jpg" style="width:100%">
+
+        </div>
+
+    </div>
+    <!---endbanner-->
+    <script src="../js/script.js" type="text/javascript"></script>
+    <div id="main">
+        <div class="container" id="maincontent">
+            <div id="contact" style="background: url('../img/7-1542691468875816985987.jpg') no-repeat right top ; background-size: cover; ">
+                <div class="container">
+                    <div id="contactbox" style="width:80%">
+                        <h3>Phân biệt REAL_FAKE</h3>
+                        <h4>Để không rơi vào hoàn cảnh “tiền mất tật mang” giữa một thị trường tràn lan hàng fake và những người bán hàng thiếu lương tâm, bạn hãy trang bị cho mình những kiến thức cơ bản để trở thành một người mua thông minh. Sau đây là một
+                            số mẹo mà shop sẽ giúp bạn phân biệt giày sneaker REAL-FAKE cơ bản bằng mắt thường mà bạn nên “bỏ túi” trước khi shopping một cách vui vẻ.</h4>
+                        </br>
+                        <h5><i style="color:red" class="ti-hand-point-right"></i>Đường may</h5>
+                        <p>
+                            </i>Đường may là một tiêu chí quan trọng để biết cách nhận biết giày fake hay giày chính hãng. Những đôi giày thể thao hàng chuẩn luôn được may một cách rất cẩn thận, bởi vậy nên các đường may rất liền mạch, đều đặn, ngay ngắn
+                            và cân đối. Khi đôi giày bạn có ý định mua mà đường may xiên vẹo, xô lệch hay ngắt quãng thì gần như chắc chắn nó là hàng nhái kém chất lượng.</p>
+                        </br>
+                        <h5><i style="color:red" class="ti-hand-point-right"></i>Tem trên lưỡi giày</h5>
+                        <p>Mỗi đôi giày thể thao luôn có một chiếc tem gắn vào mặt trong của lưỡi giày. Trên chiếc tem này là những thông số cụ thể của đôi giày như xuất xứ, số size, giới tính (có thể có hoặc không), số seri, v.v… Ở những đôi giày xịn, chiếc
+                            tem này sẽ được gắn chắc chắn và phẳng vào lưỡi giày đồng thời chữ in trên đó đều rất rõ ràng và sắc sảo. Đối với giày nhái, nhiều khả năng chiếc tem này chỉ được dán tạm bợ, bên cạnh đó chữ in thì chỗ đậm chỗ nhạt không đồng
+                            đều
+                        </p>
+                        </br>
+                        <h5><i style="color:red" class="ti-hand-point-right"></i>Lót giày</h5>
+                        <p>Ở giày chính hãng, phần lót giày sẽ luôn được dán rất chắc vào đế giày trong khi ở giày fake, lớp lót này thường được dán rất cẩu thả nên rất dễ bong tróc và chữ in trên lót giày xịn cũng luôn sắc sảo và rõ nét hơn ở giày fake.</p>
+                        </br>
+                        <h5><i style="color:red" class="ti-hand-point-right"></i>Gót và đế giày</h5>
+                        <p>Một đôi giày sneaker chính hãng sẽ có phần đế giày được cắt gọt rất chính xác để cho nó có thể đứng ngay ngắn và chắc chắn trên một mặt phẳng. Còn với giày fake, đường cắt ở đế giày có thể bị lệch hay xiêu vẹo khi được đặt nằm
+                            thẳng. </p>
+                        </br>
+                        <h5><i style="color:red" class="ti-hand-point-right"></i> Tag giày </h5>
+                        <p>Bằng việc quan sát cách đôi giày được gắn tag như thế nào, bạn cũng có thể phần nào chỉ ra được nó có phải hàng chuẩn hay không, điển hình nhất là với các mẫu giày của Adidas. Một đôi giày Adidas chính hãng sẽ có phần tag được
+                            gắn vào lỗ xỏ dây giày trên cùng nằm ở má trong của một trong hai chiếc giày.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---PRODUCT--->
+        <div>
+            <div id="main">
+                <div class="container" id="maincontent">
+                    <div id="product">
+                        <div id="centerbox">
+                            <div class="productlist">
+                                <div id="productshow">
+                                </div>
+                                <div id="pagenum" class="pagenumber"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chitiet">
+                    <div id="info">
+                        <button type="button" class="close" onclick="closeChitiet()">X</button>
+                        <div class="left">
+                            <img id="imgproduct" src="">
+                        </div>
+                        <div class="right">
+                            <div class="productinfo">
+                                <h2 id="name"></h2>
+                                <h1 id="price"></h1>
+                            </div>
+                            <div class="size">
+                                <h3>SIZE</h3>
+                                <select id="size">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40" selected>40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                    </select>
+                            </div>
+                            <div class="soluong">
+                                <h3>Số lượng</h3>
+                                <button onclick="valuedown();">-</button><input type="text" id="quantity" value="1" /><button onclick="valueup();">+</button>
+                            </div>
+                        </div>
+                        <button id="cart" class="themgiohang">Thêm vào giỏ </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both">
+            <div id="foot">
+                <div class="container">
+                    <div class="topfoot">
+                        <div class="footmenu">
+                            <img src='../img/banner - Copy/STORE SHOP.png'>
+                        </div>
+                        <div class="footmenu">
+                            <h4>Thông tin hữu ích</h4>
+                            <a href="#">Hướng dẫn bảo hành</a> <br>
+                            <a href="./quydinhdoigiay.html">Quy định đổi hoặc trả giày</a>
+                        </div>
+                        <div class="footmenu">
+                            <h4>Giới thiệu</h4>
+                            <a href="#">Quan niệm về giày</a>
+                            </br>
+                            <a href="./REAL_FAKE.html">Phân biệt giày REAL-FAKE</a>
+
+                        </div>
+                        <div class="footmenu">
+                            <h4>Thông tin liên hệ </h4>
+                            <p> Địa chỉ:273 An Dương Vương, P3, Quận 5, TPHCM</p>
+                            <P>Số điện thoại: 096789564</P>
+
+                        </div>
+                    </div>
+                    <div class="botfoot">
+                        <p> 2020 @; Copyright Store Shop. All Rights Rerserved</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!---ENDPRODUCT--->
+</body>
+
+</html>

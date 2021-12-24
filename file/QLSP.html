@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán hàng</title>
+    <link rel="stylesheet" href="./../css/QLSP.css">
+
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            showProductList();
+        }
+    </script>
+    <div class="sidebar">
+        <div class="logo-details">
+            <ion-icon name="logo-xbox"></ion-icon>
+            <span class="logo-name">Giày Store</span>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="./../index.html">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="link-name">Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="ThongKe.html">
+                    <ion-icon name="bar-chart-outline"></ion-icon>
+                    <span class="link-name">Thống Kê</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="QLSP.html">
+                    <ion-icon name="bag-remove-outline"></ion-icon>
+                    <span class="link-name">Quản lí sản phẩm</span>
+                </a>
+            </li>
+            <li>
+                <a href="QLuser.html">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span class="link-name">Quản lý khách hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="donhang.html">
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                    <span class="link-name">Quản lí đơn hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="./../index.html">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span class="link-name">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--Home-content-->
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <ion-icon name="menu" sidebarBtn></ion-icon>
+                <span class="thongke">Quản lí sản phẩm</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search here">
+                <ion-icon name="search"></ion-icon>
+            </div>
+            <div class="protile-details">
+                <img src="/public_html/img/anh-ma-kinh-di-15.jpg" alt="">
+                <span class="admin">Nhóm 8</span>
+            </div>
+        </nav>
+        <!--home-->
+        <div class="homecontent">
+            <div class="viewbox">
+                Danh sách sản phẩm
+            </div> <br>
+            <div class="side-top">
+                <div id="right">
+                    <div style="display: inline-block">
+                        <input type="hidden" id="index">
+                        <input id="productid" placeholder="Nhập ID" style="height: 30px">
+                        <input id="brand" placeholder="Nhập Hãng" style="height: 30px">
+
+                        <input id="productname" placeholder="Nhập tên sản phẩm" style="height: 30px">
+                        <input id="productprice" placeholder="Giá bán" style="height: 30px">
+                        <button id="productadd" onclick="addProduct();" style="height: 30px">Thêm sản phẩm</button>
+                        <div class="anh"> <br>
+                            <span>Ảnh sản phẩm </span>
+                            <br>
+                            <input type="file" id="files">
+                            <img src="" id="image" width="100" height="100" alt=""> <br>
+                        </div>
+                    </div> <br> <br>
+                    <table id="productlist">
+                    </table>
+                    <div id="changebox">
+                        <div class="left">
+                            <img src="" id="changeimg" alt="alt"><br>
+                            <div id="c-productimg">
+                                <span>Sửa hình:</span><br>
+                                <br><input type="file" id="changeImg" onchange="changeimage();">
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div><span>Nhập ID:</span><br><input id="c-productid" value="" /></div><br>
+                            <div><span>Nhập HÃNG:</span><br><input id="c-productbrand" value="" /></div><br>
+                            <div><span>Nhập TÊN:</span><br><input id="c-productname" value="" /></div><br>
+                            <div><span>Nhập GIÁ:</span><br><input id="c-productprice" value="" /></div><br>
+                        </div>
+                        <button id="changebutton" class="changebutton">SỬA</button>
+                        <button class="closechange" onclick="closechange();">X</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./../js/dssp.js"></script>
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</html>

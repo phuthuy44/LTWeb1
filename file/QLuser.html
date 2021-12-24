@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán hàng</title>
+    <link rel="stylesheet" href="./../css/user.css">
+    <link rel="stylesheet" href="../theme/themify-icons/themify-icons.css">
+    <style>
+        /*quanlykhachhang*/
+        
+        #content {
+            width: 100%;
+            min-height: calc(100vh - 70px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        
+        #content {
+            width: 90%;
+            padding: 40px 40px;
+        }
+        
+        #content #maintable {
+            width: 100%;
+            min-height: 830px;
+            background-color: #fff;
+            box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+            padding: 30px 50px 10px;
+            overflow-x: auto;
+        }
+        
+        #content #maintable h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #content #maintable table,
+        th {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+        }
+        
+        #content #maintable table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        #content #maintable th {
+            background-color: red;
+            color: white;
+            height: 35px;
+            padding: 0 5px;
+        }
+        
+        #content #maintable td {
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 10px;
+        }
+        
+        #content #maintable td:last-child {
+            text-align: center;
+        }
+        
+        #content #maintable td .delete {
+            background-color: #c0392b;
+            font-size: 18pt;
+            color: #fff;
+            cursor: pointer;
+            width: 45px;
+            margin: 0px auto;
+            height: 20px;
+            line-height: 22px;
+            outline: none;
+            display: block;
+        }
+    </style>
+</head>
+
+<body onLoad="showUserList()">
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <ion-icon name="logo-xbox"></ion-icon>
+            <span class="logo-name">Giày Store</span>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="./../index.html">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="link-name">Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="ThongKe.html">
+                    <ion-icon name="bar-chart-outline"></ion-icon>
+                    <span class="link-name">Thống Kê</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="QLSP.html">
+                    <ion-icon name="bag-remove-outline"></ion-icon>
+                    <span class="link-name">Quản lí sản phẩm</span>
+                </a>
+            </li>
+            <li>
+                <a href="QLuser.html">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span class="link-name">Quản lý khách hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="donhang.html">
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                    <span class="link-name">Quản lí đơn hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="./../index.html">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span class="link-name" onclick="logout()">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--Home-content-->
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <ion-icon name="menu" sidebarBtn></ion-icon>
+                <span class="thongke">Quản lí khách hàng</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search here">
+                <ion-icon name="search"></ion-icon>
+            </div>
+            <div class="protile-details">
+                <img src="/public_html/img/anh-ma-kinh-di-15.jpg" alt="">
+                <span class="admin">Nhóm 8</span>
+            </div>
+        </nav>
+        <!--home-->
+        <div id="content">
+            <div id="maintable">
+                <h1>DANH SÁCH KHÁCH HÀNG</h1>
+                <table id="userlist">
+                    <tr>
+                        <th>STT</th>
+                        <th>HỌ TÊN KH</th>
+                        <th>TÊN ĐĂNG NHẬP</th>
+                        <th>NGÀY ĐĂNG KÝ</th>
+                        <th>Xóa</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="./../js/dssp.js"></script>
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</html>

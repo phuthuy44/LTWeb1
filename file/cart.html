@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GIÀY STORE</title>
+    <link rel="icon" href="./../img/chạy với đam mê (1).svg">
+    <link rel="stylesheet" href="./../theme/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="./../theme/themify-icons/demo-files/demo.css" type="text/css" />
+    <link rel="stylesheet" href="./../theme/themify-icons/demo-files/demo.css" type="text/css">
+</head>
+
+<body onLoad="showMenu2();checklogin2();showCartTable();showbill()">
+
+    <div style="background-color:red;font-size:12px; color:black;text-align:center;font-weight: bold;">MIỄN PHÍ ĐỔI TRẢ ĐƠN HÀNG NỘI THÀNH >300K - FREESHIP- ĐẢM BẢO CHẤT LƯỢNG </div>
+    <div id="nav">
+        <div class="container">
+            <div class="topnav">
+                <ul class="left">
+                    <li><a href="htpps://www.facebook.com/"><i class=" fab ti-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab ti-instagram"></i></a></li>
+                </ul>
+                <ul class="right">
+                    <li><button onclick="showform()"><i class=" fab ti-user"></i></button></li>
+                    <li>
+                        <button onclick="location.href='cart.html'"><i class=" ti-shopping-cart-full" aria-hidden="true"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="botnav">
+                <div class="logo">
+                    <a href="../index.html"><img src="img/banner/STORE SHOP.png" alt=""></a>
+                </div>
+                <div><button id="btnmenu" onclick="showMenuMobile()" class><i class="ti-align-justify"></i></button></div>
+                <ul id="navmenu" class></ul>
+            </div>
+        </div>
+    </div>
+    <div id="user" class="modal">
+        <div id="login">
+            <form id="loginform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+                <h2>ĐĂNG NHẬP</h2>
+                <div class="logininfo">
+                    <div class="col">
+                        <label for="usernameLogin">Tên đăng nhập:</label>
+                        <input type="text" id="usernameLogin">
+                        <div id="usernameerror"><i class="alert ti-alert"></i>Bạn chưa đăng nhập tên đăng nhập</div>
+                        <label for="passwordLogin">Mật khẩu:</label>
+                        <input type="password" id="passwordLogin">
+                        <div id="passwordloginerror"><i class="alert ti-alert"></i>Bạn chưa nhập mật khẩu</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnlogin">Login</button>
+                <p>Bạn chưa có tài khoản?<a href="#" onClick="showSignUp()">Đăng ký</a></p>
+            </form>
+
+        </div>
+        <div id="signup">
+            <form id="signupform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+                <h2>ĐĂNG KÝ</h2>
+                <div class="signupinfo">
+                    <div class="col">
+                        <label for="fullname">Họ và tên:</label>
+                        <input type="text" id="fullname">
+                        <div id="fullnameerror"><i class="alert ti-alert"></i>Bạn chưa nhập họ tên</div>
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address">
+                        <div id="addresserror"><i class="alert ti-alert"></i>Bạn chưa nhâp địa chỉ</div>
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone">
+                        <div id="phoneerror"><i class="alert ti-alert"></i>Bạn chưa nhập số điện thoại</div>
+
+                    </div>
+                    <div class="col">
+                        <label for="usernameSignUp">Tên đăng nhập: </label>
+                        <input type="text" id="usernameSignUp">
+                        <div id="usererror"><i class="alert ti-alert"></i>Bạn chưa nhập tên đăng nhập</div>
+                        <label for="passwordSignUp">Mật khẩu: </label>
+                        <input type="password" id="passwordSignUp">
+                        <div id="passworderror"><i class="alert ti-alert"></i>Bạn chưa nhập mật khẩu</div>
+                        <label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+                        <input type="password" id="passwordSignUp2">
+                        <div id="password2error"><i class="alert ti-alert"></i>Mật khẩu không trùng khớp</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnsignup">Đăng ký</button>
+                <p>Trở về trang <a href="#" onClick="showLogin()">Đăng nhập</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!--searchsection-->
+
+    <!--endsearchsection-->
+    <div id="cart">
+        <div id="title">
+            <div class="container">
+                <h1>Giỏ hàng</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div id="contain">
+                <div id="bill">
+                </div>
+                <table id="carttable">
+                </table>
+                <div class="total">Thành tiền: <span id="totalprice"></span></div>
+                <button onclick="deletecart()">Xóa tất cả</button>
+                <button onclick="buy()">Thanh toán</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="foot">
+        <div class="container">
+            <div class="topfoot">
+                <div class="footmenu">
+                    <img src='./../img/banner - Copy/STORE SHOP.png' alt="alt">
+                </div>
+                <div class="footmenu">
+                    <h4>Thông tin hữu ích</h4>
+                    <a href="#">Hướng dẫn bảo hành</a> <br>
+                    <a href="./quydinhdoigiay.html">Quy định đổi hoặc trả giày</a>
+                </div>
+                <div class="footmenu">
+                    <h4>Giới thiệu</h4>
+                    <a href="#">Quan niệm về giày</a>
+                    </br>
+                    <a href="./REAL_FAKE.html">Phân biệt giày REAL-FAKE</a>
+                </div>
+                <div class="footmenu">
+                    <h4>Thông tin liên hệ </h4>
+                    <p> Địa chỉ:273 An Dương Vương, P3, Quận 5, TPHCM</p>
+                    <P>Số điện thoại: 096789564</P>
+
+                </div>
+            </div>
+            <div class="botfoot">
+                <p> 2020 @; Copyright Store Shop. All Rights Rerserved</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' id='style' href='./css/css.css' type='text/css' media='all' />
+    <title>GIÀY STORE</title>
+    <link rel="stylesheet" href="./theme/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        window.onhashchange = function() {
+            showproduct();
+        };
+        window.onload = function() {
+            window.scrollTo(0, 0);
+            createproduct();
+            sort();
+            pagenumber();
+            if (!window.location.hash) {
+                window.location = window.location + '#1';
+            };
+            checklogin();
+            showmenu();
+
+        };
+    </script>
+    <div style="background-color:red;font-size:12px; color:black;text-align:center;font-weight: bold;" class="aaaa">MIỄN PHÍ ĐỔI TRẢ ĐƠN HÀNG NỘI THÀNH >300K - FREESHIP- ĐẢM BẢO CHẤT LƯỢNG </div>
+    <div id="nav">
+        <div class="container">
+            <div class="topnav">
+                <ul class="left">
+                    <li><a href="htpps://www.facebook.com/"><i class=" fab ti-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab ti-instagram"></i></a></li>
+                </ul>
+                <ul class="right">
+                    <li><button onclick="showform()"><i class=" fab ti-user"></i></button></li>
+                    <li>
+                        <button onclick="location.href='../public_html/file/cart.html'"><i class=" ti-shopping-cart-full" aria-hidden="true"></i></button>
+                    </li>
+                    <li>
+                        <button id="searchButton" class="searchButton1" onclick="showSearch();"><i class="fab ti-search"></i></button>
+                    </li>
+            </div>
+            </ul>
+        </div>
+        <input type="text" id="searchBar" value="" class="searchBar" placeholder="Tìm kiếm sản phẩm" onkeyup="searchProduct();">
+        <div id="searchBox">
+        </div>
+        <div class="botnav">
+            <div><button id="btnmenu" onclick="showMenuMobile()" class><i class="ti-align-justify"></i></button></div>
+            <ul id="navmenu" class></ul>
+        </div>
+    </div>
+
+    <div id="user" class="modal">
+        <div id="login">
+            <form id="loginform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+                <h2>ĐĂNG NHẬP</h2>
+                <div class="logininfo">
+                    <div class="col">
+                        <label for="usernameLogin">Tên đăng nhập:</label>
+                        <input type="text" id="usernameLogin">
+                        <div id="usernameerror"><i class="alert ti-alert"></i>Bạn chưa đăng nhập tên đăng nhập</div>
+                        <label for="passwordLogin">Mật khẩu:</label>
+                        <input type="password" id="passwordLogin">
+                        <div id="passwordloginerror"><i class="alert ti-alert"></i>Bạn chưa nhập mật khẩu</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnlogin">Login</button>
+                <p>Bạn chưa có tài khoản?<a href="#" onClick="showSignUp()">Đăng ký</a></p>
+            </form>
+
+        </div>
+        <div id="signup">
+            <form id="signupform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+                <h2>ĐĂNG KÝ</h2>
+                <div class="signupinfo">
+                    <div class="col">
+                        <label for="fullname">Họ và tên:</label>
+                        <input type="text" id="fullname">
+                        <div id="fullnameerror"><i class="alert ti-alert"></i>Bạn chưa nhập họ tên</div>
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address">
+                        <div id="addresserror"><i class="alert ti-alert"></i>Bạn chưa nhâp địa chỉ</div>
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone">
+                        <div id="phoneerror"><i class="alert ti-alert"></i>Bạn chưa nhập số điện thoại</div>
+                    </div>
+                    <div class="col">
+                        <label for="usernameSignUp">Tên đăng nhập: </label>
+                        <input type="text" id="usernameSignUp">
+                        <div id="usererror"><i class="alert ti-alert"></i>Bạn chưa nhập tên đăng nhập</div>
+                        <label for="passwordSignUp">Mật khẩu: </label>
+                        <input type="password" id="passwordSignUp">
+                        <div id="passworderror"><i class="alert ti-alert"></i>Bạn chưa nhập mật khẩu</div>
+                        <label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+                        <input type="password" id="passwordSignUp2">
+                        <div id="password2error"><i class="alert ti-alert"></i>Mật khẩu không trùng khớp</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnsignup">Đăng ký</button>
+                <p>Trở về trang <a href="#" onClick="showLogin()">Đăng nhập</a></p>
+        </div>
+    </div>
+    </form>
+    <!--searchsection-->
+
+    <!--endsearchsection-->
+    <!--banner-->
+    <div class="bannerSection">
+        <div class=" fade">
+            <img class="slideShow" src="img/banner - Copy/1.jpg" style="width:100%">
+            <img class="slideShow" src="img/banner - Copy/2.jpg" style="width:100%">
+            <img class="slideShow" src="img/banner - Copy/3.jpg" style="width:100%">
+            <img class="slideShow" src="img/banner - Copy/4.jpg" style="width:100%">
+            <img class="slideShow" src="img/banner - Copy/5.jpg" style="width:100%">
+
+        </div>
+
+    </div>
+    <!---endbanner-->
+    <script src="js/script.js" type="text/javascript"></script>
+
+    <!---PRODUCT--->
+    <div>
+        <div id="main">
+            <div class="container" id="maincontent">
+                <div id="product">
+                    <div id="centerbox">
+                        <div class="productlist">
+                            <div id="productshow">
+                            </div>
+                            <div id="pagenum" class="pagenumber"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="chitiet">
+                <div id="info">
+                    <button type="button" class="close" onclick="closeChitiet()">X</button>
+                    <div class="left">
+                        <img id="imgproduct" src="">
+                    </div>
+                    <div class="right">
+                        <div class="productinfo">
+                            <h2 id="name"></h2>
+                            <h1 id="price"></h1>
+                        </div>
+                        <div class="size">
+                            <h3>SIZE</h3>
+                            <select id="size">
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40" selected>40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                    </select>
+                        </div>
+                        <div class="soluong">
+                            <h3>Số lượng</h3>
+                            <button onclick="valuedown();">-</button><input type="text" id="quantity" value="1" /><button onclick="valueup();">+</button>
+                        </div>
+                    </div>
+                    <button id="cart" class="themgiohang">Thêm vào giỏ </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both">
+        <div id="foot">
+            <div class="container">
+                <div class="topfoot">
+                    <div class="footmenu">
+                        <img src='img/banner - Copy/STORE SHOP.png'>
+                    </div>
+                    <div class="footmenu">
+                        <h4>Thông tin hữu ích</h4>
+                        <a href="#">Hướng dẫn bảo hành</a> <br>
+                        <a href="./file/quydinhdoigiay.html">Quy định đổi hoặc trả giày</a>
+                    </div>
+                    <div class="footmenu">
+                        <h4>Giới thiệu</h4>
+                        <a href="#">Quan niệm về giày</a><br>
+                        <a href="./file/REAL_FAKE.html">Phân biệt giày REAL-FAKE</a>
+
+                    </div>
+                    <div class="footmenu">
+                        <h4>Thông tin liên hệ </h4>
+                        <p> Địa chỉ:273 An Dương Vương, P3, Quận 5, TPHCM</p>
+                        <P>Số điện thoại: 096789564</P>
+
+                    </div>
+                </div>
+                <div class="botfoot">
+                    <p> 2020 @; Copyright Store Shop. All Rights Rerserved</p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!---ENDPRODUCT--->
+</body>
+
+</html>

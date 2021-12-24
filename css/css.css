@@ -1,0 +1,457 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+
+
+/* 
+    Created on : 16 thg 11, 2021, 20:06:11
+    Author     : lamquoc
+*/
+
+
+/*--------SEARCH------------*/
+
+@keyframe search {
+    from {
+        left: 10px
+    }
+    to {
+        left: 30px
+    }
+    ;
+}
+
+.searchBar {
+    width: 390px;
+    background: #fff;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    left: 30px;
+    z-index: 99;
+    border-radius: 10px;
+}
+
+#searchBox {
+    position: absolute;
+    top: 120px;
+    left: 30px;
+    width: 390px;
+    background: ghostwhite;
+    max-height: 500px;
+    z-index: 1;
+    display: none;
+    padding: 15px;
+    margin: -15px 0px 0px 0px;
+    overflow-y: scroll;
+    border-radius: 1px;
+}
+
+.searchButton2 {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    margin: -4px -2px 0px 15px;
+    z-index: 2;
+    transition: 0.5s;
+    background: none;
+    color: white;
+    border-radius: 22.5px;
+    border: white solid 2px;
+    font-size: 16pt;
+}
+
+.searchInfo {
+    display: inline-block;
+    width: 360px;
+    height: 90px;
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: -5px;
+}
+
+.searchInfo img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 5px;
+    left: 10px;
+}
+
+.searchNP {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+}
+
+.searchInfo .name {
+    font-size: 11pt;
+    color: black;
+    width: 270px;
+    font-family: “Courier New”, Courier, monospace;
+}
+
+.searchInfo .price {
+    text-align: center;
+    font-size: 12pt;
+    color: #ff6666;
+    margin-top: 10px;
+    font-family: “Courier New”, Courier, monospace;
+}
+
+.searchInfo:hover {
+    background: #999999;
+}
+
+#searchButton1 {}
+
+@media screen and (min-width:601px) and (max-width:900px) {
+    #searchBox {
+        left: 18%;
+        top: 110px;
+        width: 70%;
+    }
+    #searchBar {
+        left: 18%;
+        top: 60px;
+        z-index: 2;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #searchBox {
+        left: 15%;
+        width: 65%;
+        top: 110px;
+    }
+    #searchBar {
+        left: 15%;
+        width: 65%;
+        top: 60px;
+    }
+}
+
+
+/*--------SẢN PHẨM----------*/
+
+.uppercase {
+    font-weight: bold;
+    font-style: oblique;
+}
+
+#centerbox {
+    padding-left: 30px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h2 {
+    padding-top: 5px;
+    font-weight: bold;
+    font-family: fantasy;
+}
+
+.center h3 {
+    font-size: initial;
+    font-family: Courier;
+}
+
+.productlist {
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+.product {
+    width: 20%;
+    height: 375px;
+    border: none;
+    float: left;
+    margin: 15px 5px 15px 40px;
+}
+
+.product img {
+    width: 100%;
+    height: 65%;
+    min-height: 50%;
+}
+
+.product h4 {
+    padding-top: 10px;
+    text-align: center;
+    color: #ff6666;
+}
+
+.product h5 {
+    padding-top: 10px;
+    text-align: center;
+    color: #f11303;
+}
+
+.card-button {
+    width: 100%;
+    height: 40px;
+    padding-bottom: 0px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #F2CB05;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+    margin-top: -15px;
+    font-family: “Courier New”, Courier, monospace;
+}
+
+.product:hover .card-button {
+    opacity: 1;
+}
+
+.product:hover {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 1, 0.5);
+}
+
+@media screen and (min-width:751px) and (max-width: 1060px) {
+    .product {
+        width: 225px;
+        height: 375px;
+        border: none;
+        float: left;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        margin-right: 5%;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .product {
+        width: 250px;
+        height: 375px;
+        border: none;
+        float: left;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        margin-left: 30%;
+    }
+}
+
+.pagenumber {
+    clear: both;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.pagenumber ul {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.pagenumber li {
+    display: block;
+    width: 30px;
+    height: 25px;
+    border-radius: 10px;
+    background: #f11303;
+    color: white;
+    padding: 5px;
+}
+
+.pagenumber a {
+    float: left;
+    text-decoration: none;
+    padding-top: 5px;
+    text-align: center;
+    margin: 5px;
+}
+
+
+/*----------Xem chi tiết------------*/
+
+#info {
+    background: -moz-linear-gradient(right, #593131, #C5785A);
+    background: -o-linear-gradient(right, #593131, #C5785A);
+    background: -ms-linear-gradient(right, #593131, #C5785A);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0.1, #593131), color-stop(0.9, #C5785A));
+    border-radius: 90px 15px;
+    height: 450px;
+    width: 800px;
+    margin: 100px auto 0 auto;
+    position: relative;
+}
+
+#info .left {
+    width: 30%;
+    position: absolute;
+    top: 15%;
+    left: 7.5%;
+}
+
+#info .left img {
+    height: auto;
+    width: 275px;
+}
+
+#info .right {
+    width: 40%;
+    position: absolute;
+    top: 10%;
+    right: 7.5%;
+}
+
+#info .right .productinfo h2 {
+    color: white;
+    font-family: “Courier New”, Courier, monospace;
+}
+
+#info .right .productinfo h1 {
+    color: #ff6666;
+    font-family: “Courier New”, Courier, monospace;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 25px;
+}
+
+#info .right .size h3 {
+    float: left;
+    font-family: “Courier New”, Courier, monospace;
+    padding: 0px 20px;
+    margin: 10px;
+    color: white;
+}
+
+#info .right .size select {
+    font-size: 10pt;
+    border: appworkspace 3px solid;
+    padding: 5px 30px;
+    float: left;
+}
+
+#info .right .soluong {
+    clear: both;
+}
+
+#info .right .soluong h3 {
+    float: left;
+    font-family: “Courier New”, Courier, monospace;
+    padding: 15px 0px 5px 20px;
+    margin: 10px;
+    color: white;
+}
+
+#info .right .soluong button {
+    padding: 10px;
+    margin-top: 15px;
+    float: left;
+}
+
+#info .right .soluong button:hover {
+    background: #cccccc;
+    color: white;
+}
+
+#info .right .soluong input {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 50px;
+    margin-top: 15px;
+}
+
+#info .themgiohang {
+    position: absolute;
+    right: 15%;
+    bottom: 15%;
+}
+
+#info .themgiohang {
+    margin: 0px;
+}
+
+#info .themgiohang {
+    background: #F2CB05;
+    padding: 15px 25px 15px 25px;
+    color: white;
+    font-size: 18pt;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#info .close {
+    width: 30px;
+    height: 30px;
+    background-color: #ff6666;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 2.5%;
+    top: 5%;
+}
+
+#info .close:hover {
+    background-color: #ff4700;
+    color: #cccccc;
+}
+
+#chitiet {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(8, 8, 8, 0.6);
+    display: none;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+@media screen and (max-width:900px) {
+    #chitiet {}
+    #info {
+        border-radius: 50px 0px 50px 0px;
+        width: 400px;
+        height: 700px;
+        margin: 25px auto 0 auto;
+    }
+    #info .left {
+        left: 15%;
+        top: 5%;
+    }
+    #info .right {
+        left: 5%;
+        top: 50%;
+        width: 90%;
+    }
+    #info .right .productinfo h2 {
+        text-align: center;
+    }
+    #info .right .productinfo h1 {
+        padding-top: 25px;
+    }
+    #info .themgiohang {
+        bottom: 5%;
+    }
+    #info .close {
+        top: -5px;
+        right: -10px;
+    }
+    #info .themgiohang {
+        right: 20%;
+    }
+}
